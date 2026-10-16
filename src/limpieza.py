@@ -39,6 +39,6 @@ def limpiar_posts(df: pd.DataFrame) -> pd.DataFrame:
         df = df.drop(columns=['email'])
     
     filas_despues = len(df)
-    logger.info(f"Limpieza completa: {filas_antes} → {filas_despues} filas")
+    logger.info(f"Limpeza completa: {filas_antes} -> {filas_despues} filas")
     
     return df.reset_index(drop=True)

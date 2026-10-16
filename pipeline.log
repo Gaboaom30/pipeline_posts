@@ -1,0 +1,58 @@
+2026-10-16 19:15:46 | INFO     | pipeline             | ============================================================
+2026-10-16 19:15:46 | INFO     | pipeline             | INICIO: Pipeline de posts enriquecidos
+2026-10-16 19:15:46 | INFO     | pipeline             | ============================================================
+2026-10-16 19:15:46 | INFO     | pipeline.ingesta     | Ingiriendo usuarios...
+2026-10-16 19:15:47 | INFO     | pipeline.ingesta     | Ingeridos 10 usuarios
+2026-10-16 19:15:47 | INFO     | pipeline.ingesta     | Ingiriendo posts...
+2026-10-16 19:15:47 | INFO     | pipeline.ingesta     | Ingeridos 100 posts
+2026-10-16 19:15:47 | INFO     | pipeline.limpieza    | Combinando 100 posts con 10 usuarios...
+2026-10-16 19:15:47 | INFO     | pipeline.limpieza    | Limpiando 100 posts...
+2026-10-16 19:15:47 | INFO     | pipeline.validacion  | Validación exitosa: 100 posts pasan todas las reglas
+2026-10-16 19:15:47 | CRITICAL | pipeline             | FALLO tras 0.9s: ImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.
+ - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package.
+Traceback (most recent call last):
+  File "C:\Users\anato\projects\portafolio\pipeline_posts\src\pipeline.py", line 51, in ejecutar
+    df.to_parquet(parquet_path, index=False)
+  File "C:\Users\anato\projects\portafolio\pipeline_posts\.venv\Lib\site-packages\pandas\core\frame.py", line 3135, in to_parquet
+    return to_parquet(
+           ^^^^^^^^^^^
+  File "C:\Users\anato\projects\portafolio\pipeline_posts\.venv\Lib\site-packages\pandas\io\parquet.py", line 486, in to_parquet
+    impl = get_engine(engine)
+           ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\anato\projects\portafolio\pipeline_posts\.venv\Lib\site-packages\pandas\io\parquet.py", line 68, in get_engine
+    raise ImportError(
+ImportError: Unable to find a usable engine; tried using: 'pyarrow', 'fastparquet'.
+A suitable version of pyarrow or fastparquet is required for parquet support.
+Trying to import the above resulted in these errors:
+ - `Import pyarrow` failed. pyarrow is required for parquet support. Use pip or conda to install the pyarrow package.
+ - `Import fastparquet` failed. fastparquet is required for parquet support. Use pip or conda to install the fastparquet package.
+2026-10-16 19:20:20 | INFO     | pipeline             | ============================================================
+2026-10-16 19:20:20 | INFO     | pipeline             | INICIO: Pipeline de posts enriquecidos
+2026-10-16 19:20:20 | INFO     | pipeline             | ============================================================
+2026-10-16 19:20:20 | INFO     | pipeline.ingesta     | Ingiriendo usuarios...
+2026-10-16 19:20:20 | INFO     | pipeline.ingesta     | Ingeridos 10 usuarios
+2026-10-16 19:20:20 | INFO     | pipeline.ingesta     | Ingiriendo posts...
+2026-10-16 19:20:20 | INFO     | pipeline.ingesta     | Ingeridos 100 posts
+2026-10-16 19:20:20 | INFO     | pipeline.limpieza    | Combinando 100 posts con 10 usuarios...
+2026-10-16 19:20:20 | INFO     | pipeline.limpieza    | Limpiando 100 posts...
+2026-10-16 19:20:20 | INFO     | pipeline.validacion  | Validación exitosa: 100 posts pasan todas las reglas
+2026-10-16 19:20:23 | INFO     | pipeline             | Exportados 100 posts a output\posts_enriquecidos.parquet
+2026-10-16 19:20:23 | INFO     | pipeline             | ÉXITO: Pipeline completado en 3.2s
+2026-10-16 19:20:23 | INFO     | pipeline             | ============================================================
+2026-10-16 19:23:35 | INFO     | pipeline             | ============================================================
+2026-10-16 19:23:35 | INFO     | pipeline             | INICIO: Pipeline de posts enriquecidos
+2026-10-16 19:23:35 | INFO     | pipeline             | ============================================================
+2026-10-16 19:23:35 | INFO     | pipeline.ingesta     | Ingiriendo usuarios...
+2026-10-16 19:23:37 | INFO     | pipeline.ingesta     | Ingeridos 10 usuarios
+2026-10-16 19:23:37 | INFO     | pipeline.ingesta     | Ingiriendo posts...
+2026-10-16 19:23:38 | INFO     | pipeline.ingesta     | Ingeridos 100 posts
+2026-10-16 19:23:38 | INFO     | pipeline.limpieza    | Combinando 100 posts con 10 usuarios...
+2026-10-16 19:23:38 | INFO     | pipeline.limpieza    | Limpiando 100 posts...
+2026-10-16 19:23:38 | INFO     | pipeline.limpieza    | Limpeza completa: 100 -> 100 filas
+2026-10-16 19:23:38 | INFO     | pipeline.validacion  | Validación exitosa: 100 posts pasan todas las reglas
+2026-10-16 19:23:38 | INFO     | pipeline             | Exportados 100 posts a output\posts_enriquecidos.parquet
+2026-10-16 19:23:38 | INFO     | pipeline             | ÉXITO: Pipeline completado en 3.6s
+2026-10-16 19:23:38 | INFO     | pipeline             | ============================================================
